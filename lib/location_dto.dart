@@ -31,16 +31,16 @@ class LocationDto {
     bool isLocationMocked =
         Platform.isAndroid ? json[Keys.ARG_IS_MOCKED] : false;
     return LocationDto._(
-      json[Keys.ARG_LATITUDE],
-      json[Keys.ARG_LONGITUDE],
-      json[Keys.ARG_ACCURACY],
-      json[Keys.ARG_ALTITUDE],
-      json[Keys.ARG_SPEED],
-      json[Keys.ARG_SPEED_ACCURACY],
-      json[Keys.ARG_HEADING],
-      json[Keys.ARG_TIME],
+      json[Keys.ARG_LATITUDE] ?? 0.0,
+      json[Keys.ARG_LONGITUDE] ?? 0.0,
+      json[Keys.ARG_ACCURACY] ?? 0.0,
+      json[Keys.ARG_ALTITUDE]?? 0.0,
+      json[Keys.ARG_SPEED] ?? 0.0,
+      json[Keys.ARG_SPEED_ACCURACY]?? 0.0,
+      json[Keys.ARG_HEADING]?? 0.0,
+      json[Keys.ARG_TIME] ?? 0.0,
       isLocationMocked,
-      json[Keys.ARG_PROVIDER],
+      json[Keys.ARG_PROVIDER] ?? "",
     );
   }
 
